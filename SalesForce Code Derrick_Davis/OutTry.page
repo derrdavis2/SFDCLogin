@@ -1,0 +1,52 @@
+<apex:page controller="JsTestCon">
+    
+<style>
+.panelWrapper  {
+    background-color: gold!important;
+    color: yellow!important;
+    padding: 20px 30px 20px 30px !important;
+}
+    .panWrapper  {
+    
+  
+    background-color: purple!important;
+    color: gold!important;
+    padding: 10px 50px 10px 50px !important;
+    text - font: bold;           !important;
+    text-align: center;          !important;
+}
+</style>
+    
+    <apex:form id="ExtUsrLog" >
+    <apex:pageBlock > 
+    <apex:pagemessages />
+    
+       <apex:outputPanel styleClass="panelWrapper" layout="block">       
+        
+        <div align="center" draggable="false" >
+            
+        <apex:pageBlockSection columns="1">
+       	<apex:pageBlockSectionItem >		
+         <apex:outputPanel styleClass="panWrapper" layout="block">     
+        Input UserID :  &nbsp; &nbsp;&nbsp;<apex:inputText required="true" style="" value="{!email}" id="email"/><br/>
+         <br/>
+         <br/>
+        Input Password :&nbsp; <apex:inputText required="true" value="{!password}" id="inputPassword"/><br/>
+             
+            </apex:outputPanel>
+           </apex:pageBlockSectionItem>
+           </apex:pageBlockSection>  
+        
+      <br/>
+      <br/>
+        <apex:commandButton action="{!checkEmail}" value="Validity Check" />
+        <apex:commandButton value="Enter" onclick="alert('{!$Label.Page_is_not_Ready_lndg}');"/> 
+        <apex:commandButton value="Cancel" onclick="self.close()"/>                   
+            
+            </div>
+           
+        </apex:outputPanel>
+    </apex:pageBlock>   
+    </apex:form>
+ 
+</apex:page>
